@@ -17,9 +17,10 @@ public class Home extends JFrame {
 
         Title.setFont(new Font("SansSerif Bold",Font.BOLD,80));
         Title.setForeground(Color.white);
+        Title.setVisible(true);
 
-
-        PlayButton.setSize(200,50);
+        PlayButton.addActionListener(e -> startGame());
+        PlayButton.setVisible(true);
 
         TitlePanel.setPreferredSize(new Dimension(1000,300));
         TitlePanel.setBackground(Color.blue);
@@ -31,5 +32,10 @@ public class Home extends JFrame {
 
         this.add(TitlePanel,BorderLayout.NORTH);
         this.add(ButtonPanel,BorderLayout.SOUTH);
+    }
+    void startGame(){
+        // hide title and play button
+        Title.setVisible(false);
+        PlayButton.setVisible(false);
     }
 }
